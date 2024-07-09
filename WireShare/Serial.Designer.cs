@@ -40,6 +40,9 @@
             this.comboboxparity = new MetroSet_UI.Controls.MetroSetComboBox();
             this.comboboxbaud = new MetroSet_UI.Controls.MetroSetComboBox();
             this.comboboxdatabits = new MetroSet_UI.Controls.MetroSetComboBox();
+            this.textBoxReceive = new System.Windows.Forms.TextBox();
+            this.textBoxSend = new System.Windows.Forms.TextBox();
+            this.buttonsend = new MetroSet_UI.Controls.MetroSetButton();
             metroSetLabel4 = new MetroSet_UI.Controls.MetroSetLabel();
             this.SuspendLayout();
             // 
@@ -82,6 +85,7 @@
             this.buttonConnect.Text = "Connect";
             this.buttonConnect.ThemeAuthor = "Narwin";
             this.buttonConnect.ThemeName = "MetroLite";
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
             // ButtonDisconnect
             // 
@@ -108,6 +112,7 @@
             this.ButtonDisconnect.Text = "Disconnect";
             this.ButtonDisconnect.ThemeAuthor = "Narwin";
             this.ButtonDisconnect.ThemeName = "MetroLite";
+            this.ButtonDisconnect.Click += new System.EventHandler(this.ButtonDisconnect_Click);
             // 
             // metroSetLabel1
             // 
@@ -305,11 +310,57 @@
             this.comboboxdatabits.ThemeAuthor = "Narwin";
             this.comboboxdatabits.ThemeName = "MetroLite";
             // 
+            // textBoxReceive
+            // 
+            this.textBoxReceive.Location = new System.Drawing.Point(496, 64);
+            this.textBoxReceive.Multiline = true;
+            this.textBoxReceive.Name = "textBoxReceive";
+            this.textBoxReceive.Size = new System.Drawing.Size(274, 203);
+            this.textBoxReceive.TabIndex = 14;
+            this.textBoxReceive.TextChanged += new System.EventHandler(this.textBoxReceive_TextChanged);
+            // 
+            // textBoxSend
+            // 
+            this.textBoxSend.Location = new System.Drawing.Point(496, 301);
+            this.textBoxSend.Name = "textBoxSend";
+            this.textBoxSend.Size = new System.Drawing.Size(274, 27);
+            this.textBoxSend.TabIndex = 15;
+            // 
+            // buttonsend
+            // 
+            this.buttonsend.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.buttonsend.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.buttonsend.DisabledForeColor = System.Drawing.Color.Gray;
+            this.buttonsend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonsend.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.buttonsend.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.buttonsend.HoverTextColor = System.Drawing.Color.White;
+            this.buttonsend.IsDerivedStyle = true;
+            this.buttonsend.Location = new System.Drawing.Point(589, 344);
+            this.buttonsend.Name = "buttonsend";
+            this.buttonsend.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.buttonsend.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.buttonsend.NormalTextColor = System.Drawing.Color.White;
+            this.buttonsend.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.buttonsend.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.buttonsend.PressTextColor = System.Drawing.Color.White;
+            this.buttonsend.Size = new System.Drawing.Size(94, 29);
+            this.buttonsend.Style = MetroSet_UI.Enums.Style.Light;
+            this.buttonsend.StyleManager = null;
+            this.buttonsend.TabIndex = 16;
+            this.buttonsend.Text = "Send";
+            this.buttonsend.ThemeAuthor = "Narwin";
+            this.buttonsend.ThemeName = "MetroLite";
+            this.buttonsend.Click += new System.EventHandler(this.buttonsend_Click);
+            // 
             // Serial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Controls.Add(this.buttonsend);
+            this.Controls.Add(this.textBoxSend);
+            this.Controls.Add(this.textBoxReceive);
             this.Controls.Add(this.comboboxdatabits);
             this.Controls.Add(this.comboboxbaud);
             this.Controls.Add(this.comboboxparity);
@@ -326,6 +377,7 @@
             this.Size = new System.Drawing.Size(886, 545);
             this.Load += new System.EventHandler(this.Serial_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -342,5 +394,8 @@
         private MetroSet_UI.Controls.MetroSetComboBox comboboxparity;
         private MetroSet_UI.Controls.MetroSetComboBox comboboxbaud;
         private MetroSet_UI.Controls.MetroSetComboBox comboboxdatabits;
+        private TextBox textBoxReceive;
+        private TextBox textBoxSend;
+        private MetroSet_UI.Controls.MetroSetButton buttonsend;
     }
 }
